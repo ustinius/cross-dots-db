@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  backend:
+    image: ${DOCKER_REGISTRY-}asptest
+    build:
+      context: .
+      dockerfile: asptest/Dockerfile
+
+  client:
+    image: client
+    build:
+      context: ./react2test
+      dockerfile: Dockerfile
